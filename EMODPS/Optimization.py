@@ -77,10 +77,10 @@ def comp_objectives(*vars):
     df_dvlpd = train_dvlpd.export_df()
 
 
-    Obj1 = np.mean(df_dvlpd["P1J_flooding"].values + df_dvlpd["P2J_flooding"].values) # m3/s * 30 s
+    Obj1 = np.mean(np.mean(df_dvlpd["P1J_flooding"].values) + np.mean(df_dvlpd["P2J_flooding"].values))
     
     
-    Obj2 = np.mean(np.mean(df_dvlpd["OvF1_flow"].values) + np.mean(df_dvlpd["OvF1_flow"].values))
+    Obj2 = np.mean(np.mean(df_dvlpd["OvF1_flow"].values) + np.mean(df_dvlpd["OvF2_flow"].values))
         
 
     
